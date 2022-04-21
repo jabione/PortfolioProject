@@ -1,0 +1,167 @@
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+  <alert></alert>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+
+        <h5 class="modal-title" id="exampleModalLabel">Send me a request</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <form #form="ngForm" (ngSubmit)="onSubmit();" novalidate>
+        <div class="modal-body">
+
+          <div class="form-group">
+            <label for="firstName">First Name :</label>
+            <input type="text"
+                   class="form-control"
+                   [(ngModel)]="contact.firstName"
+                   name="first"
+                   placeholder="First Name" />
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name : </label>
+            <input type="text"
+                   class="form-control"
+                   [(ngModel)]="contact.lastName"
+                   name="last"
+                   placeholder="Full Name" />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email"
+                   class="form-control"
+                   [(ngModel)]="contact.email"
+                   aria-describedby="emailHelp"
+                   name="email"
+                   placeholder="Enter email" />
+            <small id="emailHelp" class="form-text text-muted"></small>
+          </div>
+          <div class="form-group">
+            <label for="message">Message : </label>
+            <textarea class="form-control"
+                      [(ngModel)]="contact.message"
+                      name="message">
+            </textarea>
+          </div>
+          <!--<button type="submit"
+                  class="btn btn-primary"
+                  [disabled]="!FormData.valid">
+            Submit
+          </button>-->
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Send message</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+      <!--<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" #form="ngForm" >
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Send me a request</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="firtName" class="col-form-label">First Name:</label>
+              <input type="text" class="form-control" id="firstName" [(ngModel)]={{contact.firstName}}>
+            </div>
+            <div class="form-group">
+              <label for="lastName" class="col-form-label">Last Name:</label>
+              <input type="text" class="form-control" id="lastName"  [(ngModel)]={{contact.lastName}}>
+            </div>
+            <div class="form-group">
+              <label for="email" class="col-form-label">Email:</label>
+              <input type="text" class="form-control" id="email" [(ngModel)]={{contact.email}}>
+            </div>
+            <div class="form-group">
+              <label for="message" class="col-form-label">Message:</label>
+              <textarea class="form-control" id="message" placeholder="Message" [(ngModel)]={{contact.email}}></textarea>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" (click)="onSubmit()">Send message</button>
+        </div>
+
+
+      </div>
+    </div>
+  </div>-->
+      <!--<form #form="ngForm" class="form pt-3 pb-3" (ngSubmit)="onSubmit()" novalidate>
+    <label class="col-12">
+      First Name: <sup>*</sup>
+      <span *ngIf="firstNameField.invalid && firstNameField.touched" class="text-danger float-right">First Name is required</span>
+      <input type="text"
+             name="title"
+             [(ngModel)]={{contact.firstName}}
+             placeholder="First Name"
+             class="w-100"
+             required
+             #nameField="ngModel"
+             [class.is-invalid]="firstNameField.invalid && firstNameField.touched">
+    </label>
+    <label class="col-12">
+      Last Name: <sup>*</sup>
+      <span *ngIf="lastNameField.invalid && lastNameField.touched" class="text-danger float-right">Last Name is required</span>
+      <input type="text"
+             name="title"
+             [(ngModel)]={{contact.lastName}}
+             placeholder="Last Name"
+             class="w-100"
+             required
+             #nameField="ngModel"
+             [class.is-invalid]="lastNameField.invalid && lastNameField.touched">
+    </label>
+
+    <label class="col-12">
+      Email
+      <span *ngIf="emailField.invalid && emailField.touched" class="text-danger float-right">Should be a valid email</span>
+      <input #emailField="ngModel"
+             [(ngModel)]={{contact.email}}
+             [class.is-invalid]="emailField.invalid && emailField.touched"
+             class="w-100"
+             email
+             name="email"
+             placeholder="name@example.com"
+             type="email">
+      <small class="d-block text-muted ">We'll never share your email with anyone else</small>
+    </label>
+
+    <label class="col-12">
+    Message: <sup>*</sup>
+    <span *ngIf="message.invalid && message.touched" class="text-danger float-right">Message is required</span>
+    <input type="text"
+           name="title"
+           [(ngModel)]={{contact.message}}
+           placeholder="Message...."
+           class="w-100"
+           required
+           #nameField="ngModel"
+           [class.is-invalid]="message.invalid && message.touched">
+    </label>
+
+    <div class="text-right">
+      <button type="reset" class="btn btn-secondary m-1">Cancel</button>
+      <button type="submit"
+              class="btn btn-primary m-1"
+              >
+        Send
+      </button>
+    </div>
+  </form>-->

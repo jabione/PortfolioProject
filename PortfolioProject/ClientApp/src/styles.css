@@ -1,0 +1,5 @@
+/*Add  data-aos Css from the template*/
+[data-aos] {
+  opacity: 1 !important;
+  transform: translate(0) scale(1) !important;
+}
